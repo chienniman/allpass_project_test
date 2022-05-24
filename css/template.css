@@ -1,0 +1,95 @@
+body {
+  background: #F4F2E6;
+}
+
+#footer {
+  background: #F4F2E6;
+  background-image: url("../pics/wave.png");
+  background-size: cover;
+  margin: 0 auto;
+  height: 397px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+#footer .footer_content .wave {
+  max-width: 1600px;
+}
+
+#footer .logo {
+  width: 100px;
+}
+
+#footer .logo_and_links {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  background: #6accbf;
+  padding: 65px 58px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#footer .logo_and_links .links_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#footer .logo_and_links .links_group .link {
+  padding: 0 15px;
+}
+
+#footer .logo_and_links .links_group .link a {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#footer .company_and_phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 20px 16px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#footer .company_and_phone p {
+  font-size: 24px;
+}
+
+.wave_img {
+  display: block;
+  width: 100%;
+}
+/*# sourceMappingURL=template.css.map */
