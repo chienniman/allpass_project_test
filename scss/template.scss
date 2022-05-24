@@ -1,102 +1,202 @@
 // 通用性設定
 // 顏色
-$primary_color:#F4F2E6;
-$secondary_color:#6accbf;
+$primary_color: #f4f2e6;
+$secondary_color: #6accbf;
 // 排版置中flex
-@mixin flex($justify-content,$align-items) {
-    display: flex;
-    justify-content: $justify-content;
-    align-items:$align-items;
-  }
+@mixin flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+// 長寬設定
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin position($top, $left, $x, $y) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($x, $y);
+}
 // 排版置中position
-@mixin position(){
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
+@mixin position_center() {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
 }
-body{
-    background: $primary_color;
+body {
+  background: $primary_color;
 }
-// Nadia請從這裡開始
-
-// Andy請從這裡開始 
-
-// Boris start here
-// 頁尾
-#footer{
-    background: $primary_color;
-    background-image: url('../pics/wave.png');
-    background-size: cover;
-    // max-width: 1920px;
-    margin: 0 auto;
-    height: 397px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    // 頁尾的內容部分
-    .footer_content{
-        // 波浪型裝飾
-        .wave{
-            max-width: 1600px;
-        }
-    }
-    // logo跟頁尾連結
-    .logo{
-        width: 100px;
-    }
-    .logo_and_links{
-        @include position();
-        background: $secondary_color;
-        padding: 65px 58px;
-        width:100%;
-        // flex分散
-        @include flex(space-between,center);
-        .links_group{
-            // flex置中
-            @include flex(center,center);
-            flex-wrap: wrap;
-            // 頁尾的各項連結，顧客權益、聯絡我們、意見回饋、粉專頁等
-            .link{
-                @include flex(center,center);
-                @media(max-width:768px){
-                    width: 50%;
-                    margin: 10px;
-                }
-                padding: 0 15px;
-                a{
-                    color: white;
-                    font-weight: bold;
-                    font-size: 24px;
-                    white-space: nowrap;
-                }
-            }
-        }
-    }
-    .company_and_phone{
-        @media(max-width:768px){
-            display: flex;
-            flex-wrap: wrap;
-            bottom: -100px;
-            p{
-                display: block;
-                text-align: center;
-                width: 100%;
-                padding:5px;
-            }
-        }
-        @include flex(space-between,center);
-        width: 100%;
-        padding: 20px 16px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        p{
-            font-size: 24px;
-        }
-    }
-}
-.wave_img{
-    display: block;
+header {
+  height: 109px;
+  background: #6accbf;
+  display: flex;
+  nav {
     width: 100%;
+    position: relative;
+    .logo {
+      @include size(140px, 140px);
+      @include position(15px, 125px, 0, 0);
+      border-radius: 50%;
+      background-color: #6accbf;
+    }
+    .logo_img {
+      width: 100px;
+      @include size(125px, 125px);
+      @include position(50%, 50%, -50%, -50%);
+      border-radius: 50%;
+    }
+    // 導覽列上的連結
+    .nav_content {
+      @include position(50%, 75%, -50%, -50%);
+      position: absolute;
+      display: flex;
+      ul {
+        display: flex;
+        li {
+          a {
+            font-size: 24px;
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 30px;
+            white-space: nowrap;
+          }
+        }
+      }
+      .burger_link {
+        position: relative;
+        display: none;
+        // 漢堡條樣式
+        .line {
+          @include size(70px, 3px);
+          background-color: #ffffff;
+          margin-bottom: 10px;
+        }
+      }
+      // 導覽列上的摺疊選單_mobile變版
+      .list {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    nav {
+      height: 95px;
+      .nav_logo {
+        .logo {
+          @include size(100px, 100px);
+          @include position(25px, 20%, 20%, 0);
+          img {
+            width: 85px;
+            height: 85px;
+          }
+        }
+      }
+      // 選單列
+      // .nav_content{
+      //     display: flex;
+      //     .burger_link{
+      //         display: block;
+      //         position: relative;
+      //         display: flex;
+      //         // 漢堡條樣式
+      //         .link{
+      //             position: absolute;
+      //             right: 70px;
+      //             .line{
+      //                 width: 40px;
+      //             }
+      //         }
+      //         // 選單列表
+      //         .list{
+      //            display: none;
+      //         }
+      //     }
+      //     .nav_content_pc{
+      //         display: none;
+      //     }
+      // }
+    }
+  }
+}
+// 頁尾
+#footer {
+  background: $primary_color;
+  background-image: url("../pics/wave.png");
+  background-size: cover;
+  // max-width: 1920px;
+  margin: 0 auto;
+  height: 397px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  // 頁尾的內容部分
+  .footer_content {
+    // 頁尾波浪型裝飾
+    .wave {
+      max-width: 1600px;
+    }
+  }
+  // logo跟頁尾連結
+  .logo {
+    width: 100px;
+  }
+  .logo_and_links {
+    @include position_center();
+    background: $secondary_color;
+    padding: 65px 58px;
+    width: 100%;
+    // flex分散
+    @include flex(space-between, center);
+    .links_group {
+      // flex置中
+      @include flex(center, center);
+      flex-wrap: wrap;
+      // 頁尾的各項連結，顧客權益、聯絡我們、意見回饋、粉專頁等
+      .link {
+        @include flex(center, center);
+        @media (max-width: 768px) {
+          width: 50%;
+          margin: 10px;
+        }
+        padding: 0 15px;
+        a {
+          color: white;
+          font-weight: bold;
+          font-size: 24px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .company_and_phone {
+    @media (max-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      bottom: -100px;
+      p {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 5px;
+      }
+    }
+    @include flex(space-between, center);
+    width: 100%;
+    padding: 20px 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    p {
+      font-size: 24px;
+    }
+  }
+}
+.wave_img {
+  display: block;
+  width: 100%;
 }

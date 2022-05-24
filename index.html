@@ -4,25 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>front_end_test</title>
+    <title>front_end_template</title>
     <!-- reset css檔案 -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/template.css">
 </head>
 <body>
-    <!-- 佔位排版，可以直接刪掉，因為頁尾這樣看起來比較順 -->
-    <div style="height: 1000px;">
-    </div>
     <header>
-        <!-- Nadia請從這裡開始 -->
+        <nav>
+            <!-- 導覽列上的店家logo -->
+            <div class="nav_logo">
+                <div class="logo">
+                    <img class="logo_img" src="./pics/logo.jpeg" alt="">
+                </div>
+            </div>
+            <!-- 選單列 -->
+            <div class="nav_content">
+                <div class="burger_link">
+                    <!-- 漢堡條樣式 -->
+                    <div class="link">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <!-- 選單列表 -->
+                    <ul class="list"> 
+                        <li>
+                            <a href="#">品牌故事</a>
+                        </li>
+                        <li>
+                            <a href="#">商品介紹</a>  
+                            <ul class="product_list">
+                                <li>
+                                    <a href="#">飲品介紹</a>  
+                                </li>
+                                <li>
+                                    <a href="#">餐點介紹</a>  
+                                </li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <a href="#">門市據點</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 1440px 選單列 -->
+                <ul class="nav_content_pc">
+                    <li>
+                        <a href="#">品牌故事</a>
+                    </li>
+                    <li>
+                        <a href="#">商品介紹</a>  
+                    </li>
+                    <li>
+                        <a href="#">門市據點</a>
+                    </li>
+                    <li>
+                        <a href="#">意見回饋</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
+        <!-- 佔位子用，到時候拿來挖洞 -->
         <section>
-            <!-- Andy請從這裡開始 -->
+            <div style="height:1000px;">
+            </div>
         </section>
     </main>
     <footer id="footer">
-        <!-- Boris start here -->
         <div class="footer_content">
             <div class="logo_and_links">
                 <div class="logo">
@@ -59,6 +109,5 @@
             </div>  
         </div>
     </footer>
-    <!-- new_branch_test -->
 </body>
 </html>
