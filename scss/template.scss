@@ -55,17 +55,36 @@ body{
         .links_group{
             // flex置中
             @include flex(center,center);
+            flex-wrap: wrap;
+            // 頁尾的各項連結，顧客權益、聯絡我們、意見回饋、粉專頁等
             .link{
+                @include flex(center,center);
+                @media(max-width:768px){
+                    width: 50%;
+                    margin: 10px;
+                }
                 padding: 0 15px;
                 a{
                     color: white;
                     font-weight: bold;
                     font-size: 24px;
+                    white-space: nowrap;
                 }
             }
         }
     }
     .company_and_phone{
+        @media(max-width:768px){
+            display: flex;
+            flex-wrap: wrap;
+            bottom: -100px;
+            p{
+                display: block;
+                text-align: center;
+                width: 100%;
+                padding:5px;
+            }
+        }
         @include flex(space-between,center);
         width: 100%;
         padding: 20px 16px;

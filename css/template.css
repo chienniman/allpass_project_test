@@ -55,16 +55,35 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #footer .logo_and_links .links_group .link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+  #footer .logo_and_links .links_group .link {
+    width: 50%;
+    margin: 10px;
+  }
 }
 
 #footer .logo_and_links .links_group .link a {
   color: white;
   font-weight: bold;
   font-size: 24px;
+  white-space: nowrap;
 }
 
 #footer .company_and_phone {
@@ -82,6 +101,23 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+@media (max-width: 768px) {
+  #footer .company_and_phone {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    bottom: -100px;
+  }
+  #footer .company_and_phone p {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+  }
 }
 
 #footer .company_and_phone p {
