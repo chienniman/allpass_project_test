@@ -13,6 +13,7 @@ $secondary_color: #6accbf;
   width: $width;
   height: $height;
 }
+// position top_left
 @mixin position($top, $left, $x, $y) {
   position: absolute;
   top: $top;
@@ -29,7 +30,8 @@ $secondary_color: #6accbf;
 body {
   background: $primary_color;
 }
-header {
+// 頁首固定在視窗上方
+#header {
   z-index: 100;
   top: 0;
   position: sticky;
@@ -122,8 +124,12 @@ header {
       height: 500px;
     }
     .list {
+      @media(max-width:576px){
+        top: 68px;
+      }
       position: absolute;
       left: -290px;
+      top: 76px;
       padding: 0px 30px;
       width: 400px;
       height: 0px;
@@ -217,7 +223,7 @@ header {
       padding: 0px 60px;
     }
     @media(max-width:425px){
-      padding: 0px 30px;
+      padding: 10px 30px;
     }
     @include position_center();
     background: $secondary_color;
@@ -241,6 +247,9 @@ header {
         }
         padding: 0 15px;
         a {
+          @media(max-width:576px){
+            font-size: 20px;
+          }
           color: white;
           font-weight: bold;
           font-size: 24px;
@@ -271,8 +280,4 @@ header {
       font-size: 24px;
     }
   }
-}
-.wave_img {
-  display: block;
-  width: 100%;
 }
