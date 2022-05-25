@@ -3,6 +3,10 @@ body {
 }
 
 header {
+  z-index: 100;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
   height: 109px;
   background: #6accbf;
   display: -webkit-box;
@@ -27,6 +31,18 @@ header nav .logo {
   background-color: #6accbf;
 }
 
+@media (max-width: 768px) {
+  header nav .logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 35px;
+    left: 60px;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
 header nav .logo_img {
   width: 100px;
   width: 125px;
@@ -39,6 +55,13 @@ header nav .logo_img {
   border-radius: 50%;
 }
 
+@media (max-width: 768px) {
+  header nav .logo_img {
+    width: 85px;
+    height: 85px;
+  }
+}
+
 header nav .nav_content {
   position: absolute;
   top: 50%;
@@ -49,6 +72,22 @@ header nav .nav_content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 910px) {
+  header nav .nav_content {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  header nav .nav_content {
+    display: none;
+  }
 }
 
 header nav .nav_content ul {
@@ -65,49 +104,144 @@ header nav .nav_content ul li a {
   white-space: nowrap;
 }
 
-header nav .nav_content .burger_link {
-  position: relative;
+header .burger_link {
   display: none;
+  width: 60px;
+  height: 60px;
+  margin: 30px 0 0 85%;
+  position: relative;
 }
 
-header nav .nav_content .burger_link .line {
-  width: 70px;
+@media (max-width: 768px) {
+  header .burger_link {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  header .burger_link {
+    margin: 40px 0 0 80%;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+header .burger_link * {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .burger_link ul,
+header .burger_link li {
+  margin-bottom: 25px;
+}
+
+header .burger_link .burger {
+  width: 60px;
+  height: 60px;
+  background-color: #6accbf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 5px solid #f4bd72;
+}
+
+header .burger_link .burger .line {
   height: 3px;
-  background-color: #ffffff;
-  margin-bottom: 10px;
+  width: 20px;
+  background-color: white;
+  margin: 5px;
 }
 
-@media (max-width: 768px) {
-  header nav .nav_content .list {
-    display: none;
-  }
+header .burger_link #burger:checked + .list {
+  padding: 30px;
+  height: 500px;
 }
 
-@media (max-width: 768px) {
-  header nav {
-    height: 95px;
-  }
-  header nav .nav_logo .logo {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 25px;
-    left: 20%;
-    -webkit-transform: translate(20%, 0);
-            transform: translate(20%, 0);
-  }
-  header nav .nav_logo .logo img {
-    width: 85px;
-    height: 85px;
-  }
+header .burger_link .list {
+  position: absolute;
+  left: -290px;
+  padding: 0px 30px;
+  width: 400px;
+  height: 0px;
+  overflow: hidden;
+  background-color: #f4bd72;
+  border-radius: 0px 0px 20px 20px;
+}
+
+header .burger_link .list #commodity:checked + .commodity-box {
+  height: 180px;
+}
+
+header .burger_link .list label,
+header .burger_link .list a {
+  border-radius: 10px;
+  padding: 10px 5px;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+header .burger_link .list .list-project {
+  margin: 5px 0px;
+  padding: 5px 10px;
+  background-color: #6accbf;
+  border: 3px solid white;
+  font-size: 30px;
+  color: white;
+}
+
+header .burger_link .list .list-project:hover {
+  background-color: white;
+  border: 6px solid #6accbf;
+  color: #6accbf;
+  font-weight: 600;
+}
+
+header .burger_link .list .commodity-box {
+  width: 100%;
+}
+
+header .burger_link .list .commodity-box, header .burger_link .list .commodity_test_box {
+  text-align: end;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  font-size: 30px;
+  background-color: #f4bd72;
+}
+
+header .burger_link .list .commodity-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+  font-weight: 600;
+}
+
+header .burger_link .list .commodity-list:hover {
+  text-shadow: 0 5px 5px black;
+  margin: 10px;
 }
 
 #footer {
+  height: 220px;
   background: #f4f2e6;
   background-image: url("../pics/wave.png");
   background-size: cover;
   margin: 0 auto;
-  height: 397px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,6 +249,26 @@ header nav .nav_content .burger_link .line {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  #footer {
+    height: 250px;
+    background-image: url("../pics/wave_md.png");
+  }
+}
+
+@media (max-width: 576px) {
+  #footer {
+    background-image: url("../pics/wave_sm.png");
+  }
+}
+
+@media (max-width: 425px) {
+  #footer {
+    background-image: url("../pics/wave_ssm.png");
+    height: 210px;
+  }
 }
 
 #footer .footer_content .wave {
@@ -132,7 +286,7 @@ header nav .nav_content .burger_link .line {
   left: 50%;
   top: 50%;
   background: #6accbf;
-  padding: 65px 58px;
+  padding: 10px 60px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -143,6 +297,18 @@ header nav .nav_content .burger_link .line {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 768px) {
+  #footer .logo_and_links {
+    padding: 0px 60px;
+  }
+}
+
+@media (max-width: 425px) {
+  #footer .logo_and_links {
+    padding: 0px 30px;
+  }
 }
 
 #footer .logo_and_links .links_group {
@@ -176,6 +342,12 @@ header nav .nav_content .burger_link .line {
   #footer .logo_and_links .links_group .link {
     width: 50%;
     margin: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  #footer .logo_and_links .links_group .link {
+    margin: 5px;
   }
 }
 

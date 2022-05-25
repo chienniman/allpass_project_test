@@ -30,6 +30,9 @@ body {
   background: $primary_color;
 }
 header {
+  z-index: 100;
+  top: 0;
+  position: sticky;
   height: 109px;
   background: #6accbf;
   display: flex;
@@ -41,15 +44,28 @@ header {
       @include position(15px, 125px, 0, 0);
       border-radius: 50%;
       background-color: #6accbf;
+      @media(max-width:768px){
+        @include size(100px, 100px);
+        @include position(35px, 60px, 0, 0);
+      }
     }
     .logo_img {
       width: 100px;
       @include size(125px, 125px);
       @include position(50%, 50%, -50%, -50%);
       border-radius: 50%;
+      @media(max-width:768px){
+        @include size(85px, 85px);
+      }
     }
-    // 導覽列上的連結
+    // 導覽列上的文字連結，品牌故事、商品介紹、門市據點、意見回饋
     .nav_content {
+      @media(max-width:910px){
+        @include position(50%, 70%, -50%, -50%);
+      }
+      @media(max-width:768px){
+        display: none;
+      }
       @include position(50%, 75%, -50%, -50%);
       position: absolute;
       display: flex;
@@ -65,72 +81,123 @@ header {
           }
         }
       }
-      .burger_link {
-        position: relative;
-        display: none;
-        // 漢堡條樣式
-        .line {
-          @include size(70px, 3px);
-          background-color: #ffffff;
-          margin-bottom: 10px;
-        }
-      }
-      // 導覽列上的摺疊選單_mobile變版
-      .list {
-        @media (max-width: 768px) {
-          display: none;
-        }
-      }
     }
   }
-  @media (max-width: 768px) {
-    nav {
-      height: 95px;
-      .nav_logo {
-        .logo {
-          @include size(100px, 100px);
-          @include position(25px, 20%, 20%, 0);
-          img {
-            width: 85px;
-            height: 85px;
-          }
+  // 折疊下拉巢狀選單
+  .burger_link {
+    display: none;
+    @include size(60px, 60px);
+    @media(max-width:768px){
+      display: block;
+    }
+    @media(max-width:576px){
+      margin: 40px 0 0 80%;
+      @include size(80px, 80px);
+    }
+    margin: 30px 0 0 85%;
+    position: relative;
+    * {
+      transition: 0.5s;
+    }
+    ul,
+    li {
+      margin-bottom: 25px;
+    }
+    .burger {
+      @include size(60px, 60px);
+      background-color: #6accbf;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 5px solid #f4bd72;
+      .line {
+        height: 3px;
+        width: 20px;
+        background-color: white;
+        margin: 5px;
+      }
+    }
+    #burger:checked + .list {
+      padding: 30px;
+      height: 500px;
+    }
+    .list {
+      position: absolute;
+      left: -290px;
+      padding: 0px 30px;
+      width: 400px;
+      height: 0px;
+      overflow: hidden;
+      background-color: #f4bd72;
+      border-radius: 0px 0px 20px 20px;
+      #commodity:checked + .commodity-box {
+        height: 180px;
+      }
+      label,
+      a {
+        border-radius: 10px;
+        padding: 10px 5px;
+        display: block;
+        text-decoration: none;
+        color: white;
+      }
+      .list-project {
+        margin: 5px 0px;
+        padding: 5px 10px;
+        background-color: #6accbf;
+        border: 3px solid white;
+        font-size: 30px;
+        color: white;
+        &:hover {
+          background-color: white;
+          border: 6px solid #6accbf;
+          color: #6accbf;
+          font-weight: 600;
         }
       }
-      // 選單列
-      // .nav_content{
-      //     display: flex;
-      //     .burger_link{
-      //         display: block;
-      //         position: relative;
-      //         display: flex;
-      //         // 漢堡條樣式
-      //         .link{
-      //             position: absolute;
-      //             right: 70px;
-      //             .line{
-      //                 width: 40px;
-      //             }
-      //         }
-      //         // 選單列表
-      //         .list{
-      //            display: none;
-      //         }
-      //     }
-      //     .nav_content_pc{
-      //         display: none;
-      //     }
-      // }
+      .commodity-box{
+        width: 100%;
+      }
+      .commodity-box,.commodity_test_box{
+        text-align: end;
+        width: 100%;
+        height:0;
+        overflow: hidden;
+        font-size: 30px;
+        background-color: #f4bd72;
+      }
+      // 陰影特效
+      .commodity-list {
+        @include flex(center,center);
+        margin: 5px;
+        font-weight: 600;
+        &:hover {
+          text-shadow: 0 5px 5px black;
+          margin: 10px;
+        }
+      }
     }
   }
 }
 // 頁尾
 #footer {
+  height: 220px;
   background: $primary_color;
   background-image: url("../pics/wave.png");
+  @media(max-width:768px){
+    height: 250px;
+    background-image: url('../pics/wave_md.png');
+  }
+  @media(max-width:576px){
+    background-image: url('../pics/wave_sm.png');
+  }
+  @media(max-width:425px){
+    background-image: url('../pics/wave_ssm.png');
+    height: 210px;
+  }
   background-size: cover;
   // max-width: 1920px;
   margin: 0 auto;
-  height: 397px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -146,9 +213,15 @@ header {
     width: 100px;
   }
   .logo_and_links {
+    @media(max-width:768px){
+      padding: 0px 60px;
+    }
+    @media(max-width:425px){
+      padding: 0px 30px;
+    }
     @include position_center();
     background: $secondary_color;
-    padding: 65px 58px;
+    padding: 10px 60px;
     width: 100%;
     // flex分散
     @include flex(space-between, center);
@@ -162,6 +235,9 @@ header {
         @media (max-width: 768px) {
           width: 50%;
           margin: 10px;
+        }
+        @media(max-width:425px){
+          margin: 5px;
         }
         padding: 0 15px;
         a {
