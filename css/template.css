@@ -408,4 +408,10 @@ body {
 #footer .company_and_phone p {
   font-size: 24px;
 }
+
+#footer .go_to_top {
+  right: 10px;
+  top: 100px;
+  position: absolute;
+}
 /*# sourceMappingURL=template.css.map */
