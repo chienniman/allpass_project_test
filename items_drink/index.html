@@ -26,6 +26,9 @@
       .item:hover{
         background: rgb(235, 218, 218);
       }
+      .info{
+        width: 200px;
+      }
     </style>
   </head>
   <body>
@@ -55,19 +58,24 @@
           咖啡跟拿鐵
         </button>
       </div>
-      <div class="card border-3">
+      <div class="card border-3 bg-light">
         <div class="card-body p-0">
           <div class="item d-flex justify-content-between mb-3" v-for="i in tempMenu">
             {{i.teaname}}<br>{{i.EngName}}
-            <div class="d-flex">
-              <div v-if="i.hot==true">
-                熱飲
-                <div class="hot rounded-circle"></div>
+            <div class="row info">
+              <div class="item_price col-6">
+                ${{i.price}}元
               </div>
-              <div v-if="i.ice==true">
-                冷飲
-                <div class="cold rounded-circle"></div>
-              </div>  
+              <div class="col-6 d-flex">
+                <div v-if="i.hot==true">
+                  熱飲
+                  <div class="hot rounded-circle"></div>
+                </div>
+                <div v-if="i.ice==true">
+                  冷飲
+                  <div class="cold rounded-circle"></div>
+                </div>  
+              </div>   
             </div>
           </div>
         </div>
