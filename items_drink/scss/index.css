@@ -1,0 +1,17 @@
+body {
+  background-image: url("../pics/body.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-x: hidden;
+}
+
+main {
+  height: 2000px;
+}
+/*# sourceMappingURL=index.css.map */
