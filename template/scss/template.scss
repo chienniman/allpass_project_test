@@ -187,6 +187,8 @@ body {
 }
 // 頁尾
 #footer {
+  position: absolute;
+  top: -220px;
   height: 220px;
   background: $primary_color;
   background-image: url("../pics/wave.png");
