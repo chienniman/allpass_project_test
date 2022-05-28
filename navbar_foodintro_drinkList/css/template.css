@@ -1,4 +1,4 @@
-body {
+body, .company_and_phone {
   background: #f4f2e6;
 }
 
@@ -161,7 +161,7 @@ body {
 
 #header .burger_link #burger:checked + .list {
   padding: 30px;
-  height: 500px;
+  height: 600px;
 }
 
 #header .burger_link .list {
@@ -243,9 +243,34 @@ body {
   margin: 10px;
 }
 
+#main {
+  background-image: url("../pics/navbar_foodintro_drinkList.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 1000px;
+}
+
+#vue_menu .hot {
+  background: brown;
+  width: 20px;
+  height: 20px;
+}
+
+#vue_menu .cold {
+  background: #39cff5;
+  width: 20px;
+  height: 20px;
+}
+
+#vue_menu .item:hover {
+  background: #ebdada;
+}
+
+#vue_menu .info {
+  width: 200px;
+}
+
 #footer {
-  position: absolute;
-  top: -220px;
   height: 220px;
   background: #f4f2e6;
   background-image: url("../pics/wave.png");
@@ -258,6 +283,10 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+}
+
+#footer a {
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -374,7 +403,7 @@ body {
 }
 
 #footer .company_and_phone {
-  padding-top: 120px;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -393,18 +422,7 @@ body {
 
 @media (max-width: 768px) {
   #footer .company_and_phone {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    bottom: -100px;
-  }
-  #footer .company_and_phone p {
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding: 5px;
+    display: none;
   }
 }
 

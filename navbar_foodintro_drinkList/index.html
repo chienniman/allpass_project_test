@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <!-- 模板 css檔案 -->
     <link rel="stylesheet" href="./css/template.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
   </head>
   <body>
     <header id="header">
@@ -87,12 +93,64 @@
         </div>
       </nav>
     </header>
-    <main id="main">
-      <!-- 佔位子用，到時候拿來挖洞 -->
-      <section id="test">
-        <div style="height: 5000px ;background: white;">
+    <main id="main"> 
+      <div id="vue_menu">
+        <div class="row flex-wrap">
+          <div class="col-md-3 d-flex flex-column justify-content-center align-items-center mt-5">
+            <button class="btn btn-primary" @click="showColdDrink()">
+              冷飲{{cold_length}}
+            </button>
+            <button class="btn btn-danger"@click="showHotDrink()">
+              熱飲{{hot_length}}
+            </button>
+            <button class="btn btn-secondary" @click="show_cold_and_Hot_Drink()">
+              冷熱飲{{cold_and_hot_length}}
+            </button>
+          </div>
+          <div class="btn_groups col-md-9 d-flex flex-wrap justify-content-center align-items-center">
+            <button class="btn btn-secondary btn-lg me-3" @click="showAllMenu()">
+              全部飲品{{all_length}}
+            </button>
+            <button class="btn btn-primary btn-lg me-3" @click="showFreshTea()">
+              調茶飲{{fresh_length}}
+            </button>
+            <button class="btn btn-danger btn-lg me-3" @click="showHandPick_Tea()">
+              嚴選茶品{{HandPick_Tea_length}}
+            </button>
+            <button class="btn btn-success btn-lg me-3" @click="showMilk_and_Juice()">
+              牛奶跟果汁{{Milk_and_Juice_length}}
+            </button>
+            <button class="btn btn-warning btn-lg me-3" @click="showTeaLatte()">
+              茶拿鐵{{TeaLatte_length}}
+            </button>
+            <button class="btn btn-light btn-lg me-3" @click="showCoffee_and_Latte()">
+              咖啡跟拿鐵{{Coffee_and_Latte_length}}
+            </button>
+          </div>
         </div>
-      </section>
+        <div class="card border-3 bg-light">
+          <div class="card-body">
+            <div class="item d-flex justify-content-between mb-3" v-for="(i,index) in tempMenu">
+              {{index+1}}.{{i.teaname}}<br>{{i.EngName}}
+              <div class="row info">
+                <div class="item_price col-6">
+                  ${{i.price}}元
+                </div>
+                <div class="col-6 d-flex">
+                  <div v-if="i.hot==true">
+                    熱飲
+                    <div class="hot rounded-circle"></div>
+                  </div>
+                  <div v-if="i.ice==true">
+                    冷飲
+                    <div class="cold rounded-circle"></div>
+                  </div>  
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer id="footer">
       <div class="footer_content">
@@ -131,5 +189,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

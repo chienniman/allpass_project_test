@@ -27,7 +27,7 @@ $secondary_color: #6accbf;
   left: 50%;
   top: 50%;
 }
-body {
+body,.company_and_phone{
   background: $primary_color;
 }
 // 頁首固定在視窗上方
@@ -121,7 +121,7 @@ body {
     }
     #burger:checked + .list {
       padding: 30px;
-      height: 500px;
+      height: 600px;
     }
     .list {
       @media(max-width:576px){
@@ -185,12 +185,39 @@ body {
     }
   }
 }
+// 飲料清單
+#main{
+  background-image:url('../pics/navbar_foodintro_drinkList.png') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 1000px;
+
+}
+#vue_menu{
+  .hot{
+    background:brown;
+    width: 20px;
+    height: 20px;
+  }
+  .cold{
+    background: rgb(57, 207, 245);
+    width: 20px;
+    height: 20px;
+  }
+  .item:hover{
+    background: rgb(235, 218, 218);
+  }
+  .info{
+    width: 200px;
+  }
+}
 // 頁尾
 #footer {
-  position: absolute;
-  top: -220px;
+  a{
+    text-decoration: none;
+  }
   height: 220px;
-  // background: $primary_color;
+  background: $primary_color;
   background-image: url("../pics/wave.png");
   @media(max-width:768px){
     height: 250px;
@@ -261,17 +288,9 @@ body {
     }
   }
   .company_and_phone {
-    padding-top: 120px;
+    height: 50px;
     @media (max-width: 768px) {
-      display: flex;
-      flex-wrap: wrap;
-      bottom: -100px;
-      p {
-        display: block;
-        text-align: center;
-        width: 100%;
-        padding: 5px;
-      }
+      display: none;
     }
     @include flex(space-between, center);
     width: 100%;
