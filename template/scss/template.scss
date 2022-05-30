@@ -190,7 +190,7 @@ body {
   position: absolute;
   top: -220px;
   height: 220px;
-  background: $primary_color;
+  // background: $primary_color;
   background-image: url("../pics/wave.png");
   @media(max-width:768px){
     height: 250px;
