@@ -266,6 +266,10 @@ body, .company_and_phone {
   height: 20px;
 }
 
+#vue_menu .ice-hot-selector {
+  width: 180px;
+}
+
 #vue_menu .btns {
   margin: 0 20%;
 }

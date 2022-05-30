@@ -680,7 +680,7 @@
         this.predicted_result_show=true;
         this.predicted_question=false;
         this.predicted_button=true;
-        this.predicted_result_text='真的很抱歉，請點選左邊按鈕再嘗試預測一次'
+        this.predicted_result_text='真的很抱歉，請點選推薦按鈕再嘗試預測一次'
       }
     },
     //當vue物件綁定時要執行
