@@ -27,6 +27,9 @@ $secondary_color: #6accbf;
   left: 50%;
   top: 50%;
 }
+body{
+  overflow-x: hidden;
+}
 body,.company_and_phone{
   background: $primary_color;
 }
@@ -187,11 +190,10 @@ body,.company_and_phone{
 }
 // 飲料清單
 #main{
-  background-image:url('../pics/navbar_foodintro_drinkList.png') ;
+  background-image:url('../pics/bg-lg.png') ;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 1000px;
-
 }
 #vue_menu{
   .hot{
@@ -204,11 +206,84 @@ body,.company_and_phone{
     width: 20px;
     height: 20px;
   }
+  .btns{
+    margin: 0 20%;
+  }
+  .card,.card-body{
+    border-radius: 60px!important;
+    background-color: rgba(255,255,255,0.4);
+  }
+  .card{
+    margin: 0 20%;
+  }
+  .item{
+    padding: 10px 15%;
+  }
   .item:hover{
     background: rgb(235, 218, 218);
   }
   .info{
     width: 200px;
+  }
+  // 按鈕顏色設定
+  .dropdown{
+    .btn-all{
+      background: #4572A3;
+      color: white;
+    }
+  }
+  .btn_groups{
+    .btn-all{
+      background: #4572A3;
+      color: white;
+    }
+    .btn-fresh-tea{
+      background: #62BDB1;
+      color: white;
+    }
+    .btn-handpicked-tea{
+      background: #E6AF50;
+      color: white;
+    }
+    .btn-milk-juice{
+      background: #E1CCAD;
+      color: white;
+    }
+    .btn-tea-latte{
+      background: #DBAB67;
+      color: white;
+    }
+    .btn-coffee-latte{
+      background: #A8834F;
+      color: white;
+    }
+  }
+}
+// 隨機推薦飲品
+#recommend{
+  margin: 0 5%;
+  background: #d1e7dd;
+  height: 200px;
+  .alert{
+    width: 100%;
+    height: 50%;
+  }
+  .recommend-btn{
+    border: 2px solid #6accbf;
+    background: #F4BD72;
+    color: white;
+    height: 50px;
+  }
+  .recommend_drink{
+    background: #d1e7dd;
+    width: 80%;
+    height: 100px;
+  }
+  // 預測
+  .predicted_results{
+    span{
+      cursor: pointer;
+    }
   }
 }
 // 頁尾
@@ -217,20 +292,7 @@ body,.company_and_phone{
     text-decoration: none;
   }
   height: 220px;
-  background: $primary_color;
-  background-image: url("../pics/wave.png");
-  @media(max-width:768px){
-    height: 250px;
-    background-image: url('../pics/wave_md.png');
-  }
-  @media(max-width:576px){
-    background-image: url('../pics/wave_sm.png');
-  }
-  @media(max-width:425px){
-    background-image: url('../pics/wave_ssm.png');
-    height: 210px;
-  }
-  background-size: cover;
+  background: #6ACCBF;
   // max-width: 1920px;
   margin: 0 auto;
   display: flex;

@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 body, .company_and_phone {
   background: #f4f2e6;
 }
@@ -244,7 +248,7 @@ body, .company_and_phone {
 }
 
 #main {
-  background-image: url("../pics/navbar_foodintro_drinkList.png");
+  background-image: url("../pics/bg-lg.png");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 1000px;
@@ -262,6 +266,23 @@ body, .company_and_phone {
   height: 20px;
 }
 
+#vue_menu .btns {
+  margin: 0 20%;
+}
+
+#vue_menu .card, #vue_menu .card-body {
+  border-radius: 60px !important;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#vue_menu .card {
+  margin: 0 20%;
+}
+
+#vue_menu .item {
+  padding: 10px 15%;
+}
+
 #vue_menu .item:hover {
   background: #ebdada;
 }
@@ -270,11 +291,72 @@ body, .company_and_phone {
   width: 200px;
 }
 
+#vue_menu .dropdown .btn-all {
+  background: #4572A3;
+  color: white;
+}
+
+#vue_menu .btn_groups .btn-all {
+  background: #4572A3;
+  color: white;
+}
+
+#vue_menu .btn_groups .btn-fresh-tea {
+  background: #62BDB1;
+  color: white;
+}
+
+#vue_menu .btn_groups .btn-handpicked-tea {
+  background: #E6AF50;
+  color: white;
+}
+
+#vue_menu .btn_groups .btn-milk-juice {
+  background: #E1CCAD;
+  color: white;
+}
+
+#vue_menu .btn_groups .btn-tea-latte {
+  background: #DBAB67;
+  color: white;
+}
+
+#vue_menu .btn_groups .btn-coffee-latte {
+  background: #A8834F;
+  color: white;
+}
+
+#recommend {
+  margin: 0 5%;
+  background: #d1e7dd;
+  height: 200px;
+}
+
+#recommend .alert {
+  width: 100%;
+  height: 50%;
+}
+
+#recommend .recommend-btn {
+  border: 2px solid #6accbf;
+  background: #F4BD72;
+  color: white;
+  height: 50px;
+}
+
+#recommend .recommend_drink {
+  background: #d1e7dd;
+  width: 80%;
+  height: 100px;
+}
+
+#recommend .predicted_results span {
+  cursor: pointer;
+}
+
 #footer {
   height: 220px;
-  background: #f4f2e6;
-  background-image: url("../pics/wave.png");
-  background-size: cover;
+  background: #6ACCBF;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -287,26 +369,6 @@ body, .company_and_phone {
 
 #footer a {
   text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  #footer {
-    height: 250px;
-    background-image: url("../pics/wave_md.png");
-  }
-}
-
-@media (max-width: 576px) {
-  #footer {
-    background-image: url("../pics/wave_sm.png");
-  }
-}
-
-@media (max-width: 425px) {
-  #footer {
-    background-image: url("../pics/wave_ssm.png");
-    height: 210px;
-  }
 }
 
 #footer .footer_content .wave {
